@@ -246,7 +246,7 @@ section { padding: 80px 0; }
 .section-header.centered .section-subtitle { margin: 0 auto; }
 
 /* ===== SERVICES ===== */
-.services { background: var(--gray-light); }
+.services { background: var(--gray-light); scroll-margin-top: 72px; }
 
 .services-grid {
   display: grid;
