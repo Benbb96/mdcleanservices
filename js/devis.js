@@ -117,6 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (params.get('devis') === '1') {
     devisCheckbox.checked = true;
     devisSection.classList.add('visible');
+    setTimeout(() => {
+      (document.querySelector('.form-card') ?? form).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   }
   const serviceParam = params.get('service');
   if (serviceParam && serviceSelect) {

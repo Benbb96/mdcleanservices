@@ -514,6 +514,7 @@ section { padding: 80px 0; }
 
 /* ===== FORMULAIRE ===== */
 .form-card {
+  scroll-margin-top: 88px;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
