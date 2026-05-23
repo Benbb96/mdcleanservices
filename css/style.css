@@ -795,6 +795,11 @@ input[type="range"] {
   display: block;
 }
 
+.input-error {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, .15);
+}
+
 /* ===== FOOTER ===== */
 footer {
   background: var(--dark);
@@ -1030,8 +1035,3 @@ footer {
 }
 
 /* ===== TURNSTILE ===== */
-.turnstile-wrap {
-  margin-top: 20px;
-  display: flex;
-  justify-content: flex-start;
-}

@@ -131,10 +131,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
+  // Retire le marquage d'erreur dès que l'utilisateur corrige
+  form.querySelectorAll('[required], [pattern]').forEach(field => {
+    field.addEventListener('input', () => field.classList.remove('input-error'));
+  });
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('[type="submit"]');
     const msg = document.getElementById('form-message');
+
+    // Validation côté client (délègue à la validation native HTML5)
+    let valid = true;
+    form.querySelectorAll('[required], [pattern]').forEach(field => {
+      if (!field.hasAttribute('required') && !field.value.trim()) return;
+      if (!field.validity.valid) {
+        field.classList.add('input-error');
+        valid = false;
+      }
+    });
+    if (!valid) {
+      msg.className = 'form-message error';
+      msg.textContent = 'Veuillez corriger les champs en rouge avant d\'envoyer.';
+      return;
+    }
 
     btn.disabled = true;
     btn.textContent = 'Envoi en cours…';

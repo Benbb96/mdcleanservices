@@ -8,8 +8,6 @@
   <link rel="canonical" href="https://www.mdcleanservices.com/contact.html">
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="stylesheet" href="css/style.css">
-  <!-- Cloudflare Turnstile (anti-spam invisible) -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -94,17 +92,9 @@
         <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:8px">Envoyez-nous un message</h2>
         <p style="color:#6b7280;font-size:.9rem;margin-bottom:28px">Tous les champs marqués * sont obligatoires.</p>
 
-        <!--
-          Remplacez l'action par votre endpoint Formspree :
-          https://formspree.io/f/VOTRE_ID
-          → Compte gratuit sur formspree.io (50 soumissions/mois)
-
-          Pour Turnstile : remplacez data-sitekey par votre clé Cloudflare
-          → dash.cloudflare.com > Turnstile > Add Site
-        -->
         <form
           id="contact-form"
-          action="https://formspree.io/f/VOTRE_ID_FORMSPREE"
+          action="https://formspree.io/f/xkoezrpw"
           method="POST"
           novalidate
         >
@@ -125,7 +115,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="telephone">Téléphone</label>
-              <input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00" autocomplete="tel">
+              <input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00" autocomplete="tel" pattern="[0-9\s\.\-\+]{10,15}">
             </div>
             <div class="form-group">
               <label for="sujet">Sujet *</label>
@@ -191,16 +181,6 @@
               <div class="devis-result-price" id="devis-price">—</div>
               <div class="devis-result-note">Estimation indicative HT · Devis définitif après visite</div>
             </div>
-          </div>
-
-          <!-- Cloudflare Turnstile widget -->
-          <div class="turnstile-wrap">
-            <!--
-              Remplacez VOTRE_SITE_KEY_TURNSTILE par la clé obtenue sur
-              dash.cloudflare.com/turnstile (gratuit, aucune limite).
-              En attendant, utilisez la clé de test : 1x00000000000000000000AA
-            -->
-            <div class="cf-turnstile" data-sitekey="VOTRE_SITE_KEY_TURNSTILE" data-theme="light"></div>
           </div>
 
           <div class="form-submit">
